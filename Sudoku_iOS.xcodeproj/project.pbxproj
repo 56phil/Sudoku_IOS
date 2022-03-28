@@ -8,21 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3168E27327F1EB53001FC190 /* Sudoku_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E27227F1EB53001FC190 /* Sudoku_iOSApp.swift */; };
-		3168E27527F1EB53001FC190 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E27427F1EB53001FC190 /* ContentView.swift */; };
 		3168E27727F1EB55001FC190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3168E27627F1EB55001FC190 /* Assets.xcassets */; };
 		3168E27A27F1EB55001FC190 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3168E27927F1EB55001FC190 /* Preview Assets.xcassets */; };
 		3168E27C27F1EB55001FC190 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E27B27F1EB55001FC190 /* Persistence.swift */; };
 		3168E27F27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3168E27D27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld */; };
+		3168E28627F1EC25001FC190 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E28527F1EC25001FC190 /* ContentView.swift */; };
+		3168E28A27F1EC8C001FC190 /* maincpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3168E28927F1EC8C001FC190 /* maincpp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3168E26F27F1EB53001FC190 /* Sudoku_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3168E27227F1EB53001FC190 /* Sudoku_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sudoku_iOSApp.swift; sourceTree = "<group>"; };
-		3168E27427F1EB53001FC190 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3168E27627F1EB55001FC190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3168E27927F1EB55001FC190 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3168E27B27F1EB55001FC190 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3168E27E27F1EB55001FC190 /* Sudoku_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sudoku_iOS.xcdatamodel; sourceTree = "<group>"; };
+		3168E28527F1EC25001FC190 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../Sudoku-SwiftUI/C++inSwiftUI/C++inSwiftUI/ContentView.swift"; sourceTree = "<group>"; };
+		3168E28727F1EC8C001FC190 /* Sudoku_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sudoku_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		3168E28827F1EC8C001FC190 /* maincpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maincpp.h; sourceTree = "<group>"; };
+		3168E28927F1EC8C001FC190 /* maincpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maincpp.cpp; sourceTree = "<group>"; };
+		3168E28B27F1FAE0001FC190 /* Sudoku-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sudoku-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +60,16 @@
 		3168E27127F1EB53001FC190 /* Sudoku_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3168E28B27F1FAE0001FC190 /* Sudoku-iOS-Info.plist */,
+				3168E28927F1EC8C001FC190 /* maincpp.cpp */,
+				3168E28827F1EC8C001FC190 /* maincpp.h */,
+				3168E28527F1EC25001FC190 /* ContentView.swift */,
 				3168E27227F1EB53001FC190 /* Sudoku_iOSApp.swift */,
-				3168E27427F1EB53001FC190 /* ContentView.swift */,
 				3168E27627F1EB55001FC190 /* Assets.xcassets */,
 				3168E27B27F1EB55001FC190 /* Persistence.swift */,
 				3168E27D27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld */,
 				3168E27827F1EB55001FC190 /* Preview Content */,
+				3168E28727F1EC8C001FC190 /* Sudoku_iOS-Bridging-Header.h */,
 			);
 			path = Sudoku_iOS;
 			sourceTree = "<group>";
@@ -105,6 +114,7 @@
 				TargetAttributes = {
 					3168E26E27F1EB53001FC190 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -144,8 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3168E27F27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld in Sources */,
+				3168E28627F1EC25001FC190 /* ContentView.swift in Sources */,
 				3168E27C27F1EB55001FC190 /* Persistence.swift in Sources */,
-				3168E27527F1EB53001FC190 /* ContentView.swift in Sources */,
+				3168E28A27F1EC8C001FC190 /* maincpp.cpp in Sources */,
 				3168E27327F1EB53001FC190 /* Sudoku_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,15 +283,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sudoku_iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = SD648P3Y6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Sudoku-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -291,6 +305,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "na.Sudoku-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sudoku_iOS/Sudoku_iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,15 +317,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sudoku_iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = SD648P3Y6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Sudoku-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "na.Sudoku-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sudoku_iOS/Sudoku_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
