@@ -6,9 +6,6 @@
 //
 
 #include "maincpp.h"
-#include <sstream>
-#include <iostream>
-#include <cmath>
 #include <string>
 
 #define MAX_K 1000
@@ -30,10 +27,10 @@ struct Node {
     //ID Format: (Candidate, Row, Column)
 };
 
-const int SIZE_SQUARED = SIZE*SIZE;
-const int SIZE_SQRT = sqrt((double)SIZE);
-const int ROW_NB = SIZE*SIZE*SIZE;
-const int COL_NB = 4 * SIZE*SIZE;
+const int SIZE_SQUARED = SIZE * SIZE;
+const int SIZE_SQRT = 3;
+const int ROW_NB = SIZE_SQUARED * SIZE;
+const int COL_NB = SIZE_SQUARED << 2;
 
 struct Node Head;
 struct Node* HeadNode = &Head;
@@ -42,7 +39,8 @@ struct Node* orig_values[MAX_K];
 bool matrix[ROW_NB][COL_NB] = { { 0 } };
 bool isSolved = false;
 void MapSolutionToGrid(int [SIZE][SIZE]);
-void grid2String(std::string &, int [SIZE][SIZE]);
+void grid2String(std::string &, const int [SIZE][SIZE]);
+void string2Grid(std::string &, int [SIZE][SIZE]);
 std::string toString(int);
 
 std::string originalPuzzle;
@@ -279,19 +277,24 @@ void TransformListToCurrentGrid(int Puzzle[][SIZE]) {
 //----------------------------------------------- Print Functions -----------------------------------------------//
 //===============================================================================================================//
 
-void grid2String(std::string & str, int grid[][SIZE]) {
+void string2grid(std::string & str, int grid[][SIZE]) {
     str = "";
+    int rowDisp = 0;
     for (auto i=0; i < SIZE; i++) {
         for (auto j=0; j < SIZE; j++) {
-            str += toString(grid[i][j]);
+            grid[i][j] = str[rowDisp + j] & !0x30;
         }
+        rowDisp += SIZE;
     }
 }
 
-std::string toString(int n) {
-    std::stringstream sst;
-    sst << n;
-    return sst.str();
+void grid2String(std::string & str, const int grid[][SIZE]) {
+    str = "";
+    for (auto i=0; i < SIZE; i++) {
+        for (auto j=0; j < SIZE; j++) {
+            str += (grid[i][j]) | 0x30;
+        }
+    }
 }
 
 void MapSolutionToGrid(int Sudoku[][SIZE]) {
@@ -309,8 +312,8 @@ void SolveSudoku(int Sudoku[][SIZE]) {
     BuildLinkedList(matrix);
     TransformListToCurrentGrid(Sudoku);
     search(0);
-    if (!isSolved)
-        std::cout << "No Solution!" << std::endl;
+//    if (!isSolved)
+//        std::cout << "No Solution!" << std::endl;
     isSolved = false;
 }
 
