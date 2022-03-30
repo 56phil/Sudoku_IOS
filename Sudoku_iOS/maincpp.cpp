@@ -38,6 +38,7 @@ struct Node* solution[MAX_K];
 struct Node* orig_values[MAX_K];
 bool matrix[ROW_NB][COL_NB] = { { 0 } };
 bool isSolved = false;
+bool solutionExists = false;
 void MapSolutionToGrid(int [SIZE][SIZE]);
 void grid2String(std::string &, const int [SIZE][SIZE]);
 void string2Grid(std::string &, int [SIZE][SIZE]);
@@ -277,8 +278,17 @@ void TransformListToCurrentGrid(int Puzzle[][SIZE]) {
 //----------------------------------------------- Print Functions -----------------------------------------------//
 //===============================================================================================================//
 
+void string2grid(const char * str, int grid[][SIZE]) {
+    int rowDisp = 0;
+    for (auto i=0; i < SIZE; i++) {
+        for (auto j=0; j < SIZE; j++) {
+            grid[i][j] = str[rowDisp + j] & !0x30;
+        }
+        rowDisp += SIZE;
+    }
+}
+
 void string2grid(std::string & str, int grid[][SIZE]) {
-    str = "";
     int rowDisp = 0;
     for (auto i=0; i < SIZE; i++) {
         for (auto j=0; j < SIZE; j++) {
@@ -311,20 +321,20 @@ void SolveSudoku(int Sudoku[][SIZE]) {
     BuildSparseMatrix(matrix);
     BuildLinkedList(matrix);
     TransformListToCurrentGrid(Sudoku);
+    solutionExists = true;
     search(0);
-//    if (!isSolved)
-//        std::cout << "No Solution!" << std::endl;
+    solutionExists = isSolved;
     isSolved = false;
+    
 }
 
 const char * getOriginal() {
-    
     return originalPuzzle.c_str();
 }
 
 const char * solveSudoku() {
     //Sudoku Hard to Brute Force
-    int Puzzle[SIZE][SIZE] = {
+    int puzzle[SIZE][SIZE] = {
         { 0,0,0,  0,0,0,  0,0,0 },
         { 0,0,0,  0,0,3,  0,8,5 },
         { 0,0,1,  0,2,0,  0,0,0 },
@@ -338,9 +348,13 @@ const char * solveSudoku() {
         { 0,0,0,  0,4,0,  0,0,9 }
     };
     
-    grid2String(originalPuzzle, Puzzle);
+//    if (strlen(rawPuzzle) == SIZE_SQUARED) {
+//        string2grid(rawPuzzle, puzzle);
+//    }
     
-    SolveSudoku(Puzzle);
+    grid2String(originalPuzzle, puzzle);
+    
+    SolveSudoku(puzzle);
     
     return currSolution.c_str();
 }

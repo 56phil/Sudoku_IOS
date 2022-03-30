@@ -12,8 +12,8 @@
 		3168E27A27F1EB55001FC190 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3168E27927F1EB55001FC190 /* Preview Assets.xcassets */; };
 		3168E27C27F1EB55001FC190 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E27B27F1EB55001FC190 /* Persistence.swift */; };
 		3168E27F27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3168E27D27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld */; };
-		3168E28627F1EC25001FC190 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E28527F1EC25001FC190 /* ContentView.swift */; };
 		3168E28A27F1EC8C001FC190 /* maincpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3168E28927F1EC8C001FC190 /* maincpp.cpp */; };
+		3168E28C27F3332C001FC190 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168E28527F1EC25001FC190 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		3168E27927F1EB55001FC190 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3168E27B27F1EB55001FC190 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3168E27E27F1EB55001FC190 /* Sudoku_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sudoku_iOS.xcdatamodel; sourceTree = "<group>"; };
-		3168E28527F1EC25001FC190 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../Sudoku-SwiftUI/C++inSwiftUI/C++inSwiftUI/ContentView.swift"; sourceTree = "<group>"; };
+		3168E28527F1EC25001FC190 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ContentView.swift; path = "../../Sudoku-SwiftUI/C++inSwiftUI/C++inSwiftUI/ContentView.swift"; sourceTree = "<group>"; };
 		3168E28727F1EC8C001FC190 /* Sudoku_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sudoku_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		3168E28827F1EC8C001FC190 /* maincpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maincpp.h; sourceTree = "<group>"; };
 		3168E28927F1EC8C001FC190 /* maincpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maincpp.cpp; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3168E27F27F1EB55001FC190 /* Sudoku_iOS.xcdatamodeld in Sources */,
-				3168E28627F1EC25001FC190 /* ContentView.swift in Sources */,
+				3168E28C27F3332C001FC190 /* ContentView.swift in Sources */,
 				3168E27C27F1EB55001FC190 /* Persistence.swift in Sources */,
 				3168E28A27F1EC8C001FC190 /* maincpp.cpp in Sources */,
 				3168E27327F1EB53001FC190 /* Sudoku_iOSApp.swift in Sources */,
@@ -281,6 +281,7 @@
 		3168E28327F1EB55001FC190 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -289,6 +290,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Sudoku_iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = SD648P3Y6K;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sudoku-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -304,6 +306,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "na.Sudoku-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sudoku_iOS/Sudoku_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -315,6 +318,7 @@
 		3168E28427F1EB55001FC190 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -323,6 +327,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Sudoku_iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = SD648P3Y6K;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sudoku-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -338,6 +343,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "na.Sudoku-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sudoku_iOS/Sudoku_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
